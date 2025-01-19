@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #F2C94C;
+  --white: #FFFFFF;
+  --light-gray: #BDBDBD;
+  --dark-gray: #1C1C1C;
+  --red: #E63946;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+  color: var(--gold);
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+input:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.activity-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.activity-name {
+  flex: 1 1 100%; /* Full width on smaller screens */
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px; /* Add spacing under the activity name */
+}
+
+.activity-details {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--light-gray);
+}
+
+.switch-toggle {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Allow toggle buttons to wrap on smaller screens */
+  justify-content: flex-start; /* Align items to the left */
+  width: 100%; /* Ensure full width for responsiveness */
+}
+
+.switch-toggle input {
+  position: absolute;
+  opacity: 0;
+}
+
+.switch-toggle input + label {
+  padding: 7px 15px;
+  flex: 1 1 calc(33.33% - 10px); /* Divide toggle buttons into equal thirds */
+  text-align: center;
+  color: var(--white);
+  cursor: pointer;
+  background: #444;
+  transition: background 0.3s, color 0.3s;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.switch-toggle input:checked + label {
+  background: var(--gold);
+  color: #000;
+}
+
+.switch-toggle input:checked:nth-of-type(1) + label {
+  background: gray; /* Gray for "Neither" */
+  color: #fff;
+}
+
+.switch-toggle input:checked:nth-of-type(3) + label {
+  background: green; /* Red for "Participating" */
+  color: #fff;
+}
+
+.switch-toggle label:hover {
+  background: #666;
+}
+
+button {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--gold);
+  color: var(--dark-gray);
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d4a837;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .activity-row {
+    flex-direction: column; /* Stack rows vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .activity-name {
+    margin-bottom: 10px; /* Add spacing between name and buttons */
+  }
+
+  .switch-toggle label {
+    flex: 1 1 100%; /* Make buttons full-width */
+    text-align: center;
+  }
+	
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.login-button {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--gold);
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid var(--gold);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: var(--gold);
+  color: var(--dark-gray);
+  text-decoration: none;
+}
+a {
+  color: var(--gold); /* Gold color for links */
+  text-decoration: none; /* Remove underline for a clean look */
+  font-weight: bold; /* Make the links more prominent */
+  padding: 2px 5px; /* Add slight padding for better spacing */
+  border-bottom: 2px solid transparent; /* Subtle indicator for links */
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--white); /* Change color to white on hover */
+  border-bottom: 2px solid var(--gold); /* Underline with gold on hover */
+  text-decoration: none;
+}
+
+/* For Quick Links or Navigation */
+.nav-link {
+  margin-right: 15px; /* Add spacing between navigation links */
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  color: var(--white); /* White on hover for consistency */
+  border-bottom: 2px solid var(--gold);
+}
